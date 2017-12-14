@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>
+        <head>
+            <title>räknare</title>           
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    var result = '';
+               // $(document).keypress(function(event){
+                   // key=String.fromCharCode(event.which);
+                   $("button").click(function(){
+                   key = $(this).text();
+                    if(key == '=') result = eval(result);
+                    
+                    else { 
+                        $(".animate").text(key);
+                         $(".animate").slideToggle();
+                         result += key;
+                    }
+
+                    
+
+                    console.log(key);
+                    $(".content").text(result);
+                    
+                  /*  if ( key=="="){
+                        nvalue =  $(this).text('.content');
+                        //number = Number(nvalue);
+                        console.log(nvalue);
+                    }*/
+                }); 
+                $(".delete").click(function(){
+                    
+                    location.reload();
+                   
+
+                });
+
+
+            });
+
+            </script>
+            <style>
+                .container{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 30%;
+                    height: 500px;
+                    justify-content: center;
+                    background-color: gainsboro;
+                    border-radius: 2px;
+                }
+                .showContent{
+                    width: 91%;
+                    background-color: black;
+                    color: whitesmoke;
+                   /* text-align: center;*/
+                    font-size: 23px;
+                    height: 70px;
+                    margin: 5px;
+                    padding: 6px;
+                    
+                    border-radius: 2px;
+                }
+                .number{
+                    margin: 5px;
+                   
+                    text-align: center;
+                }
+                button{
+                    width: 100px;
+                    height: 100px;
+
+
+
+                }
+                .animate{
+                    font-size: 50px;
+                }
+
+                
+  
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="showContent">
+                 <p class="content"></p>   
+                </div>
+                <div class="number">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>+</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>-</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>*</button>
+                    <button>0</button>
+                    <button class="delete">C</button>
+                    <button>=</button>
+                    <button>/</button>
+
+                </div>
+               
+    
+                
+
+
+                
+            </div>
+            <div class="animate"></div>
+           
+
+      
+        </body>
+</html>
